@@ -16,7 +16,7 @@ Het idee is dat je één van de voorbeeldweergaves uit het project op een scherm
 - Pas styling.css aan naar wens. Verwijder bv. de klasse .wrapper om de marges omheen de full-hd carrousel weg te halen.
 - Surf op je webserver naar config.php om een url in te geven van hetzij een api-link van 'Mijn Lijsten', hetzij een aquabrowser-zoekopdracht via de search-api. Op het configuratiescherm staan ter illustratie twee voorbeeldlinks.
 - Als je geen foutmelding ziet na het klikken op 'verzenden' dan is het verwerken van de xml met de resultaten normaalgezien geslaagd.
-- Surf naar result.html om het resultaat te zien / Stel deze pagina in op het systeem dat je gebruikt om bv. een disaplay aan te sturen.
+- Surf naar result.html om het resultaat te zien / Stel deze pagina in op het systeem dat je gebruikt om bv. een display aan te sturen.
 
 *Wat als je webserver geen php ondersteunt?* --> het is ook mogelijk om result.html zonder het configuratiescherm te gebruiken. Dit is wel iets omslachtiger. Je moet dan in je browser manueel naar de api-url's surfen en 'opslaan als' kiezen wanneer de xml-resultaten in de browser getoond worden. Sla het bestand op met exact dezelfde bestandsnaam als in mijn voorbeeldcode (`local_copy_of_feed.xml`) en bewaar dit in dezelfde map als result.html. Als je vervolgens result.html opent zal je opgeslagen xml bestand weergegeven worden. Voor het opslaan van meerdere xml-pagina's: zie in de code wat je achter de api-url moet typen om de 2de, 3de enz. pagina op te roepen en volg ook daarbij de bestandsnaming die je in de code ziet staan.
 
@@ -25,10 +25,10 @@ De drie overige voorbeeldweergaves (small en medium carrousel en de lijstweergav
 
 - Begin ook hier met het kopiëren van de projectbestanden naar je webserver.
 - Neem de links naar de scripts en stylesheets uit de <head> sectie van result.html op in de <head> sectie van je eigen webpagina. Pas waar nodig de verwijzingen aan aan de mappenstructuur die je gebruikt.
-- Voorzie zelf een lege <div> in je bestaande webpagina, daar waar je de carrousel of lijst wil gaan laten verschijnen en geef die een id of klassenaam naar keuze of gebruik voor het gemak de benamingen uit mijn demopagina.
--Kopieer het deel tussen de script-tags op het einde van result.html naar je eigen webpagina, plaats dit daar ook op het einde voor de afsluitende body-tag.
+- Voorzie zelf een lege div in je bestaande webpagina, daar waar je de carrousel of lijst wil gaan laten verschijnen en geef die een id of klassenaam naar keuze of gebruik voor het gemak de benamingen uit mijn demopagina.
+- Kopieer het deel tussen de script-tags op het einde van result.html naar je eigen webpagina, plaats dit daar ook op het einde voor de afsluitende body-tag.
 - Verwijder de code-stukjes van de voorbeeldweergaves die je niet wenst te gebruiken (zie stap 3 comment in dat code-stuk)
-- Indien jouw <div> een zelfgekozen id of klasse gebruikt, pas dan in het code-stuk dat je overhoudt de jquery-selector aan en verwijs naar de lege div die je eerder creëerde. Pas in dat geval ook in scripts.js de jquery-selector aan.
+- Indien jouw div een zelfgekozen id of klasse gebruikt, pas dan in het code-stuk dat je overhoudt de jquery-selector aan en verwijs naar de lege div die je eerder creëerde. Pas in dat geval ook in scripts.js de jquery-selector aan.
 - Run config.php (moet in dezelfde map staan als de webpagina waarop je de carrousel of lijst hebt geïntegreerd, zoniet moet je na het uitvoeren van config.php de gegenereerde xml bestanden manueel kopiëren naar de map van de webpagina).
 - Open je webpagina, de carrousel of lijst zou daar nu in moeten verschijnen.
 - Speel met styling.css voor een weergave die mooi aansluit bij je eigen website.
