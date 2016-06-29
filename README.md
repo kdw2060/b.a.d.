@@ -24,11 +24,11 @@ Het idee is dat je één van de voorbeeldweergaves uit het project op een scherm
 De drie overige voorbeeldweergaves (small en medium carrousel en de lijstweergave) zijn eerder bedoeld om te integreren in een bestaande website. Ik ga er van uit dat je weet hoe je daarop zelf de aanwezige html-files of template-files kunt aanpassen.
 
 - Begin ook hier met het kopiëren van de projectbestanden naar je webserver.
-- Neem de links naar de scripts en stylesheets uit de <head> sectie van result.html op in de <head> sectie van je eigen webpagina. Pas waar nodig de verwijzingen aan aan de mappenstructuur die je gebruikt.
+- Neem de links naar de scripts en stylesheets uit de head sectie van result.html op in de head sectie van je eigen webpagina. Pas waar nodig de verwijzingen aan aan de mappenstructuur die je gebruikt.
 - Voorzie zelf een lege div in je bestaande webpagina, daar waar je de carrousel of lijst wil gaan laten verschijnen en geef die een id of klassenaam naar keuze of gebruik voor het gemak de benamingen uit mijn demopagina.
 - Kopieer het deel tussen de script-tags op het einde van result.html naar je eigen webpagina, plaats dit daar ook op het einde voor de afsluitende body-tag.
 - Verwijder de code-stukjes van de voorbeeldweergaves die je niet wenst te gebruiken (zie stap 3 comment in dat code-stuk)
-- Indien jouw div een zelfgekozen id of klasse gebruikt, pas dan in het code-stuk dat je overhoudt de jquery-selector aan en verwijs naar de lege div die je eerder creëerde. Pas in dat geval ook in scripts.js de jquery-selector aan.
+- Indien jouw div een zelfgekozen id- of klassenaam gebruikt, pas dan in het codestuk dat je overhoudt de jquery-selector aan en verwijs naar de lege div die je eerder creëerde. Pas in dat geval ook in scripts.js de jquery-selector aan.
 - Run config.php (moet in dezelfde map staan als de webpagina waarop je de carrousel of lijst hebt geïntegreerd, zoniet moet je na het uitvoeren van config.php de gegenereerde xml bestanden manueel kopiëren naar de map van de webpagina).
 - Open je webpagina, de carrousel of lijst zou daar nu in moeten verschijnen.
 - Speel met styling.css voor een weergave die mooi aansluit bij je eigen website.
