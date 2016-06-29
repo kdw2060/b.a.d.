@@ -1,0 +1,146 @@
+/* een klein beetje lay-out voor de demo resultaatpagina */
+
+body {
+     font-family: Calibri, sans-serif;
+    margin: 0;
+    }
+ .intro {
+    padding-top: .5em;
+    padding-bottom: 1em;
+     padding-left: 2em;
+    position: fixed;
+    background: rgba(119, 203, 240, 0.86);
+    z-index: 10;
+    width: 100%;
+    }
+.wrapper {
+    margin: 0 auto;
+    width: 90%;
+}
+
+/*stijl voor lijstweergave*/
+
+#contentList .item {
+        display: table;
+        width: 30em;
+        font-family: calibri;
+        margin-bottom: 1.75em;
+    }
+#contentList img {
+        float: left;
+        padding-right: 1.5em;
+        width: 100px;
+        }
+#contentList h3 {
+        font-size: 1em;
+        margin-top: 0;
+        padding-top: 0.1em;
+        }
+#contentList .auteur {
+       font-size: 0.7em;
+        margin-top: 0px;
+        padding-top: 0px;
+        }
+#contentList .samenvatting {
+        font-size: 0.9em;
+        display: table;
+        }
+#contentList a {
+        text-decoration: none;
+        color: #6b6b6b;
+        }
+  #contentList a:hover {
+        color: #ff1770;
+        }
+        
+
+/*extra styling voor carrouselweergave, zie ook script opties in js file + consulteer http://kenwheeler.github.io/slick/  */
+
+/*gedeeld door 3 carrouselvarianten*/
+#contentCarrousel a, #contentCarrouselSmall a, #contentCarrouselFullScreen a {
+    text-decoration: none;
+    color: #6b6b6b;
+        }
+
+/*medium size*/
+#contentCarrousel .slick-prev:before, #contentCarrousel .slick-next:before { 
+    color:#ff1770;
+    font-size: 25px;
+        }
+#contentCarrousel img {
+    max-height: 300px;
+    max-width: 225px;
+      }
+.slick-slide{
+    width: 250px;
+    font-family: calibri;
+      }
+.slick-slide h4 {
+    width: 225px;
+    font-size: 1em;
+      }
+
+/*small size*/
+#contentCarrouselSmall .slick-prev:before, #contentCarrouselSmall .slick-next:before { 
+    color:#ff1770;
+    font-size: 20px;
+        }
+#contentCarrouselSmall img {
+    max-height: 250px;
+    max-width: 155px;
+      }
+#contentCarrouselSmall .slick-slide{
+    width: 190px;
+    font-family: calibri;
+      }
+#contentCarrouselSmall .slick-slide h4, #contentCarrouselSmall .slick-slide em {
+    width: 160px;
+    font-size: 0.9em;
+      }
+
+/*full screen size. Het idee is dat deze standalone op een tv scherm  kan draaien. De modal is toegevoegd voor als het om een touch-screen zou gaan*/
+#hdwrapper {
+    width: 1920px;
+    height: 1080px;
+    position: relative;
+    background-image: url(backgroundimages/black2.jpg);
+    /*in de map backgroundimages staan nog een aantal alternatieve achtergronden*/
+}
+#hdwrapper h1 {
+    color: #fff;
+    text-align: center;
+    padding-top: 1em;
+    font-family: Calibri;
+    font-size: 4em;
+}
+
+#contentCarrouselFullScreen {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    width: 95%;
+    margin: auto;
+}
+
+#contentCarrouselFullScreen img {
+    height: 500px;
+      }
+#contentCarrouselFullScreen .slick-slide{
+    width: 450px;
+    font-family: calibri;
+      }
+#contentCarrouselFullScreen .slick-slide h4 {
+    width: 400px;
+    font-size: 1.5em;
+    color: #fff;
+      }
+#contentCarrouselFullScreen .slick-slide em {
+  font-size: 1.25em;  
+    color: #fff;
+}
+.modal {
+    z-index: 1000000;
+}

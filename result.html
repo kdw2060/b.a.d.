@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Kris De Winter">
+  <meta name="description" content="Een voorbeeldimplementatie van de bibportalen API">
+  <title>Demo resultaten pagina</title>
+    <!--geleende stuff-->
+    <script type="text/javascript" src="geleende_stuff/jquery-3.0.0.min.js"></script>
+    <link rel="stylesheet" href="geleende_stuff/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="geleende_stuff/slick/slick-theme.css"/>
+    <script type="text/javascript" src="geleende_stuff/slick/slick.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="geleende_stuff/colorbox.css">
+    <script src="geleende_stuff/jquery.colorbox-min.js" type="text/javascript"></script>
+    <!--eigen stuff-->
+    <script src="scripts.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="styling.css" />
+</head>
+    
+<body>
+    <div class="intro">Enkele voorbeelden van hoe de data gerenderd kan worden op een pagina&nbsp;&nbsp;|&nbsp;&nbsp;<a href="config.php">Configuratiescherm</a><br><br>Spring naar:&nbsp;
+        <a href="#demo1">Medium size carrousel</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#demo2">Small size carrousel</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#demo3">Lijstweergave</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#demo4">Full HD carrousel</a>
+    </div><br><br><br><br>
+    <div class="wrapper">
+        <h3 id="demo1">Medium size carrousel</h3>
+        <div id="contentCarrousel"></div>
+        <h3 id="demo2">Small size carrousel</h3>
+        <div id="contentCarrouselSmall"></div>
+        <h3 id="demo3">Lijstweergave</h3>
+        <div id="contentList" class="modal"></div><br><br>
+        <h3 id="demo4">Full HD screen size carrousel</h3>
+        <div id="hdwrapper"><h1>Vul hier een titel in</h1><div id="contentCarrouselFullScreen"></div></div>
+        <br><br>
+    </div>
+
+<script type="text/javascript">
+$(document).ready(function(){
+    
+//stap 0 - deze pagina werkt enkel als je eerst config.php hebt uitgevoerd of manueel een xml-bestand hebt gedownload en in dezelfde map als dit bestand geplaatst
+
+//stap 1 - we lezen het opgeslagen xml bestand in en sturen dit naar de paginaparser om te kijken of er niet meer dan 1 pagina met zoekresultaten is
+$.ajax({
+    url: 'local_copy_of_feed.xml', 
+    dataType: "xml",
+    success: paginaparser,
+	error: function(){alert("Fout bij verwerken pagina1");}
+  });
+
+//stap 2 - we lezen het xml-veld 'count' met het aantal zoekresultaten uit en als dat er meer dan 10 zijn voegen we page2 aan 'document' toe enz. Op het einde sturen we 'document' naar de parse-functie (stap 3)
+function paginaparser(document){
+    var aantalitems = $(document).find("count").text();
+    parse(document);
+    if (aantalitems > 10) {
+        $.ajax({
+            url: 'local_copy_of_feed_page2.xml',
+            dataType: "xml",
+            success: parse,
+            error: function(){alert("Fout bij verwerken pagina2");}
+        });
+    }
+    if (aantalitems > 20) {
+        $.ajax({
+            url: 'local_copy_of_feed_page3.xml',
+            dataType: "xml",
+            success: parse,
+	       error: function(){alert("Fout bij verwerken pagina3");}
+        });
+    }
+}
+
+//stap 3 - we lezen de pagina of samengevoegde pagina's in, halen de relevante velden uit het xml bestand en plaatsen die op de resultatenpagina    
+function parse(document){
+  $(document).find("result").each(function(){
+    
+    //variant voor lijstweergave  
+    $("#contentList").append(
+    '<div class="item"><a href="' + $(this).find('detail-page').text()+ '">' +
+    '<img src="'+$(this).find('url').text()+  '&coversize=medium">' +
+	'<h3>'+$(this).find('short-title').text()+
+	'</h3><p class="auteur">auteur: '+$(this).find('main-author').text()+
+    '</p><p class="samenvatting">' + $(this).find('summary:first').text() +
+    '</p></a></div>'
+	);
+    
+    //variant voor carrousel 
+    $("#contentCarrousel").append(
+    '<div><a href="' + $(this).find('detail-page').text()+ '">' +
+    '<img src="'+$(this).find('url').text()+  '&coversize=large">' +
+	'<h4>'+$(this).find('short-title').text()+
+	'</h4><em>'+$(this).find('main-author').text()+
+    '</em></a></div>'
+	);  
+      
+    //variant voor kleine carrousel 
+    $("#contentCarrouselSmall").append(
+    '<div><a href="' + $(this).find('detail-page').text()+ '">' +
+    '<img src="'+$(this).find('url').text()+  '&coversize=medium">' +
+	'<h4>'+$(this).find('short-title').text()+
+	'</h4><em>'+$(this).find('main-author').text()+
+    '</em></a></div>'
+	);
+      
+    //variant voor full screen carrousel
+    $("#contentCarrouselFullScreen").append(
+    '<div><a class="targetvoorcolorbox" href="' + $(this).find('detail-page').text()+ '&c_hideheader=true&c_hidesearchbox=true">' +
+    '<img src="'+$(this).find('url').text()+  '&coversize=large">' +
+	'<h4>'+$(this).find('short-title').text()+
+	'</h4><em>'+$(this).find('main-author').text()+
+    '</em></a></div>'
+	);
+     
+    // als je slechts 1 bepaalde voorbeeldweergave wenst te gebruiken delete dan de codestukjes bij de andere 3 varianten. 
+  });
+ }  
+});
+    
+//eens de carousseldiv opgebouwd is en de pagina geladen is, kunnen we de carrousel initialiseren. We maken gebruik van slick.js, zie http://kenwheeler.github.io/slick/
+//voor de full hd variant laten we de links openen in een 'modal', ook die moet geïnitialiseerd worden, hiervoor gebruiken we Colorbox, zie http://www.jacklmoore.com/colorbox/ 
+$(document).ajaxStop(function(){
+    InitCarrousel();
+    $('.targetvoorcolorbox').colorbox({iframe:true, innerWidth:"1150px", innerHeight:"890px"});
+});
+</script>
+</body>
+</html>
