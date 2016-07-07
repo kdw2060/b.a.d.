@@ -23,13 +23,16 @@
     </div><br><br><br><br>
     <div class="wrapper">
         <h3 id="demo1">Medium size carrousel</h3>
+        <h4 class="titel"></h4>
         <div id="contentCarrousel"></div>
         <h3 id="demo2">Small size carrousel</h3>
+        <h4 class="titel"></h4>
         <div id="contentCarrouselSmall"></div>
         <h3 id="demo3">Lijstweergave</h3>
+        <h4 class="titel"></h4>
         <div id="contentList" class="modal"></div><br><br>
         <h3 id="demo4">Full HD screen size carrousel</h3>
-        <div id="hdwrapper"><h1>Vul hier een titel in</h1><div id="contentCarrouselFullScreen"></div></div>
+        <div id="hdwrapper"><h1 class="titel"></h1><div id="contentCarrouselFullScreen"></div></div>
         <br><br>
     </div>
 
@@ -37,6 +40,9 @@
 $(document).ready(function(){
     
 //stap 0 - deze pagina werkt enkel als je eerst config.php hebt uitgevoerd of manueel een xml-bestand hebt gedownload en in dezelfde map als dit bestand geplaatst
+    
+    //Inladen van de opgeslagen titel en die boven de weergaves plaatsen
+    $(".titel").load("carrouseltitel.txt");
 
 //stap 1 - we lezen het opgeslagen xml bestand in en sturen dit naar de paginaparser om te kijken of er niet meer dan 1 pagina met zoekresultaten is
 $.ajax({
@@ -46,11 +52,11 @@ $.ajax({
 	error: function(){alert("Fout bij verwerken pagina1");}
   });
 
-//stap 2 - we lezen het xml-veld 'count' met het aantal zoekresultaten uit en als dat er meer dan 10 zijn voegen we page2 aan 'document' toe enz. Op het einde sturen we 'document' naar de parse-functie (stap 3)
+//stap 2 - we lezen het xml-veld 'count' met het aantal zoekresultaten uit en als dat er meer dan 20 zijn voegen we page2 aan 'document' toe enz. Op het einde sturen we 'document' naar de parse-functie (stap 3)
 function paginaparser(document){
     var aantalitems = $(document).find("count").text();
     parse(document);
-    if (aantalitems > 10) {
+    if (aantalitems > 20) {
         $.ajax({
             url: 'local_copy_of_feed_page2.xml',
             dataType: "xml",
@@ -58,7 +64,7 @@ function paginaparser(document){
             error: function(){alert("Fout bij verwerken pagina2");}
         });
     }
-    if (aantalitems > 20) {
+    if (aantalitems > 40) {
         $.ajax({
             url: 'local_copy_of_feed_page3.xml',
             dataType: "xml",

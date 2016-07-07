@@ -1,0 +1,62 @@
+/* Voorbeeld css voor een full screen weergave op full HD scherm - gebruik F11 in je browser om de browserinterface te verbergen */
+
+/* In result.html hou je enkel de <div> met het id 'contentCarrouselFullScreen' over, de overige div's (ook de intro en de 'wrapper' en 'hdwrapper' div's) verwijder je. Van de <h> titelelementen laat je enkel het <h1> element staan. 
+Tenslotte verander je de verwijzing naar de stylesheet 'styling.css' naar deze alternatieve stylesheet */
+
+body {
+    font-family: Calibri, sans-serif;
+    width: 1920px;
+    height: 1080px;
+    margin: 0 auto;
+    background-image: url(backgroundimages/black2.jpg);
+    background-repeat: no-repeat;
+    position: absolute;
+    overflow: hidden;
+    }
+
+/* extra styling voor carrouselweergave, zie ook script opties in js file + consulteer http://kenwheeler.github.io/slick/ als je aanpassingen wilt doen */
+
+#contentCarrouselFullScreen a {
+    text-decoration: none;
+    color: #6b6b6b;
+        }
+
+h1 {
+    color: #fff;
+    text-align: center;
+    padding-top: 0.75em;
+    font-family: Calibri;
+    font-size: 4em;
+}
+
+#contentCarrouselFullScreen {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    width: 95%;
+    margin: auto;
+}
+
+#contentCarrouselFullScreen img {
+    height: 500px;
+    max-width: 90%;
+      }
+#contentCarrouselFullScreen .slick-slide{
+    width: 450px;
+    font-family: calibri;
+      }
+#contentCarrouselFullScreen .slick-slide h4 {
+    width: 400px;
+    font-size: 1.5em;
+    color: #fff;
+      }
+#contentCarrouselFullScreen .slick-slide em {
+  font-size: 1.25em;  
+    color: #fff;
+}
+.modal {
+    z-index: 1000000;
+}

@@ -127,6 +127,7 @@ body {
 
 #contentCarrouselFullScreen img {
     height: 500px;
+    max-width: 90%;
       }
 #contentCarrouselFullScreen .slick-slide{
     width: 450px;
