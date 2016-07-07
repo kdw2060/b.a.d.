@@ -5,6 +5,7 @@ Dit project (b.a.d., kort voor bib API ding, ja ik hou van flauwe woordspelingen
 In de projectbestanden is veel commentaar opgenomen om het makkelijker te maken om dit project te gaan hergebruiken voor je eigen toepassingen. Een beetje basiskennis van html/css/jquery is wel aan te raden.
 
 Hieronder zie je enkele demo-weergaves, [of klik door voor een live-demo](http://geaplamp2.cipal.be/bibapiding/result_sprinters.html)
+
 ![alt text](screenshots/Demo-overzicht.png "Demo van carrouselweergave")
 
 ## HOE GEBRUIKEN
@@ -34,6 +35,7 @@ Het idee is dat je één van de voorbeeldweergaves uit het project op een scherm
 
 *Wat als je webserver geen php ondersteunt?* --> het is ook mogelijk om result.html zonder het configuratiescherm te gebruiken. Dit is wel iets omslachtiger. Je moet dan in je browser manueel naar de api-url's surfen en 'opslaan als' kiezen wanneer de xml-resultaten in de browser getoond worden. Sla het bestand op met exact dezelfde bestandsnaam als in mijn voorbeeldcode (`local_copy_of_feed.xml`) en bewaar dit in dezelfde map als result.html. Als je vervolgens result.html opent zal je opgeslagen xml bestand weergegeven worden. Voor het opslaan van meerdere xml-pagina's: zie in de code wat je achter de api-url moet typen om de 2de, 3de enz. pagina op te roepen en volg ook daarbij de bestandsnaming die je in de code ziet staan.
 
+
 ##### B Integreren in je eigen website
 De drie overige voorbeeldweergaves (small en medium carrousel en de lijstweergave) zijn eerder bedoeld om te integreren in een bestaande website. Ik ga er van uit dat je weet hoe je daarop zelf de aanwezige html-files of template-files kunt aanpassen.
 
@@ -54,7 +56,8 @@ v1: 28-6-2016
 
 v2: 7-7-2016 Bevat volgende verbeteringen
 * een gebruiksvriendelijker en beter gelay-out configuratiescherm
-* foutdetectie in de scripts (voor het geval een foute url wordt ingegeven of deze geen resultaten geeft), nu zal de site hier op vastlopen
+* foutdetectie in de scripts (voor het geval een foute url wordt ingegeven of deze geen resultaten geeft)
+* aanpassing script naar standaard xml-feed instelling van 20 zoekresultaten / pagina
 
 Gepland in volgende releases:
 * placeholders voor wanneer een catalogusrecord geen cover of korte inhoud heeft
