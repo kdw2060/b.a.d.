@@ -4,7 +4,8 @@ Dit project (b.a.d., kort voor bib API ding, ja ik hou van flauwe woordspelingen
 
 In de projectbestanden is veel commentaar opgenomen om het makkelijker te maken om dit project te gaan hergebruiken voor je eigen toepassingen. Een beetje basiskennis van html/css/jquery is wel aan te raden.
 
-[Hier zie je een demo](http://geaplamp2.cipal.be/bibapiding/result_sprinters.html)
+Hieronder zie je enkele demo-weergaves, [of klik door voor een live-demo](http://geaplamp2.cipal.be/bibapiding/result_sprinters.html)
+![alt text](screenshots/Demo-overzicht.png "Demo van carrouselweergave")
 
 ## HOE GEBRUIKEN
 
@@ -24,8 +25,10 @@ Het idee is dat je één van de voorbeeldweergaves uit het project op een scherm
 - In de veronderstelling dat je enkel de full-hd carrousel wilt weerhouden: pas *result.html* aan om enkel die weergave over te houden. Ik heb hiervoor gedetailleerde instructies geplaatst in het bestand [stylingStandaloneFullHD.css](https://github.com/kdw2060/b.a.d./edit/master/stylingStandaloneFullHD.css).
 
 ###### Gebruik
-- Surf op je webserver naar login.php en geef je wachtwoord in om in te stellen welke items in de carrousel of lijst moeten weergegeven worden. Je kunt kiezen uit een 'Mijn Lijsten' lijst of een een Aquabrowser zoekopdracht.
-- Je kunt meteen ook een titel meegeven die bovenaan de carrousel getoond zal worden.
+- Surf op je webserver naar login.php en geef je wachtwoord in. Je krijgt dan toegang tot het eigenlijke configuratiescherm.
+![alt text](screenshots/Instellingenscherm.png "Loginscherm")
+- Om in te stellen welke items in de carrousel of lijst moeten weergegeven worden. Je kunt kiezen uit een 'Mijn Lijsten' lijst of een een Aquabrowser zoekopdracht. Je kunt meteen ook een titel meegeven die bovenaan de carrousel getoond zal worden.
+![alt text](screenshots/Instellingenscherm2.png "Configuratiescherm")
 - Als je geen foutmelding ziet na het klikken op 'verzenden' dan is het verwerken van de xml met de resultaten normaalgezien geslaagd.
 - Je wordt automatisch doorgestuurd naar de resultatenpagina. / Stel de url van deze pagina in op het systeem dat je gebruikt om bv. een display aan te sturen.
 
@@ -46,9 +49,14 @@ De drie overige voorbeeldweergaves (small en medium carrousel en de lijstweergav
 
 *Wat als je webserver geen php ondersteunt?* --> zie de werkwijze beschreven bij punt A hierboven
 
-## GEPLANDE WIJZIGINGEN
-* ~~een gebruiksvriendelijker en beter gelay-out configuratiescherm~~
-* ~~foutdetectie in de scripts (voor het geval een foute url wordt ingegeven of deze geen resultaten geeft), nu zal de site hier op vastlopen~~
+## RELEASES
+v1: 28-6-2016
+
+v2: 7-7-2016 Bevat volgende verbeteringen
+* een gebruiksvriendelijker en beter gelay-out configuratiescherm
+* foutdetectie in de scripts (voor het geval een foute url wordt ingegeven of deze geen resultaten geeft), nu zal de site hier op vastlopen
+
+Gepland in volgende releases:
 * placeholders voor wanneer een catalogusrecord geen cover of korte inhoud heeft
 
 ## THANKS TO
