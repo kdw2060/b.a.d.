@@ -4,7 +4,7 @@ Dit project (b.a.d., kort voor bib API ding, ja ik hou van flauwe woordspelingen
 
 In de projectbestanden is veel commentaar opgenomen om het makkelijker te maken om dit project te gaan hergebruiken voor je eigen toepassingen. Een beetje basiskennis van html/css/jquery is wel aan te raden.
 
-Hieronder zie je enkele demo-weergaves, [of klik door voor een live-demo](http://geaplamp2.cipal.be/bibapiding/result_sprinters.html)
+Hieronder zie je enkele demo-weergaves, [of klik door voor een live-demo](http://provincieantwerpen.bibliotheek.be/bibapiding/result_sprinters.html)
 
 ![alt text](screenshots/Demo-overzicht.png "Demo van carrouselweergave")
 
