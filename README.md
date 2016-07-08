@@ -29,6 +29,7 @@ Het idee is dat je één van de voorbeeldweergaves uit het project op een scherm
 - Surf op je webserver naar login.php en geef je wachtwoord in. Je krijgt dan toegang tot het eigenlijke configuratiescherm.
 ![alt text](screenshots/Instellingenscherm.png "Loginscherm")
 - Om in te stellen welke items in de carrousel of lijst moeten weergegeven worden. Je kunt kiezen uit een 'Mijn Lijsten' lijst of een een Aquabrowser zoekopdracht. Je kunt meteen ook een titel meegeven die bovenaan de carrousel getoond zal worden.
+
 ![alt text](screenshots/Instellingenscherm2.png "Configuratiescherm")
 - Als je geen foutmelding ziet na het klikken op 'verzenden' dan is het verwerken van de xml met de resultaten normaalgezien geslaagd.
 - Je wordt automatisch doorgestuurd naar de resultatenpagina. / Stel de url van deze pagina in op het systeem dat je gebruikt om bv. een display aan te sturen.
