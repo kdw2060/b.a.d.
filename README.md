@@ -8,6 +8,10 @@ Hieronder zie je enkele demo-weergaves, [of klik door voor een live-demo](http:/
 
 ![alt text](screenshots/Demo-overzicht.png "Demo van carrouselweergave")
 
+Een voorbeeldje van het gebruik in bib De Poort in Berchem:
+
+![alt text](screenshots/giphy.gif "Live in de bib van Berchem")
+
 ## HOE GEBRUIKEN
 
 ##### A Standalone
