@@ -1,6 +1,6 @@
 # b.a.d.  
 
-Dit project (b.a.d., kort voor bib API ding, ja ik hou van flauwe woordspelingen) is een voorbeeldimplementatie van hoe de [bibportalen API](http://www.cultuurconnect.be/diensten/bibliotheekportalen/open-data) gebruikt kan worden voor het tonen van bibcatalogusdata op een website.
+Dit project (b.a.d., kort voor bib API ding, ja ik hou van flauwe woordspelingen) is een voorbeeldimplementatie van hoe de [bibportalen API](http://www.cultuurconnect.be/diensten/bibliotheekportalen/api) gebruikt kan worden voor het tonen van bibcatalogusdata op een website.
 
 In de projectbestanden is veel commentaar opgenomen om het makkelijker te maken om dit project te gaan hergebruiken voor je eigen toepassingen. Een beetje basiskennis van html/css/jquery is wel aan te raden.
 
