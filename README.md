@@ -64,16 +64,15 @@ v2: 7-7-2016 Bevat volgende verbeteringen
 * foutdetectie in de scripts (voor het geval een foute url wordt ingegeven of deze geen resultaten geeft)
 * aanpassing script naar standaard xml-feed instelling van 20 zoekresultaten / pagina
 
-Gepland in volgende releases:
-* placeholders voor wanneer een catalogusrecord geen cover of korte inhoud heeft
+v3: 23-06-2017 Verbeteringen:
+* bug met muziekcd's opgelost waarbij de auteurs/muzikanten meermaals getoond werden
+* placeholder afbeelding toegevoegd voor wanneer een catalogusrecord geen cover heeft
 
 ## THANKS TO
 Dit project maakt gebruik van:
 * [jquery](https://jquery.com/)
 * [slick](http://kenwheeler.github.io/slick/)
 * [colorbox](http://www.jacklmoore.com/colorbox/)
-
-En ook bedankt aan Jeroen Cortvriendt voor de voorbeeldcode die hij mij eerder bezorgde.
 
 
 ## ONDERSTEUNING
