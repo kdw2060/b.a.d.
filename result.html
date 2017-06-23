@@ -77,41 +77,46 @@ function paginaparser(document){
 //stap 3 - we lezen de pagina of samengevoegde pagina's in, halen de relevante velden uit het xml bestand en plaatsen die op de resultatenpagina    
 function parse(document){
   $(document).find("result").each(function(){
+	  
+    //bij items zonder cover placeholder plaatsen
+    var imgsrc = $(this).find('url:first').text();
+    if (imgsrc == undefined || imgsrc == "") {imgsrc = "CoverPlaceholder_large.png";}
+    else {imgsrc = imgsrc + '&coversize=large';}
     
     //variant voor lijstweergave  
     $("#contentList").append(
-    '<div class="item"><a href="' + $(this).find('detail-page').text()+ '">' +
-    '<img src="'+$(this).find('url').text()+  '&coversize=medium">' +
+    '<div class="item"><a href="' + $(this).find('detail-page').first().text()+ '">' +
+    '<img src="'+ imgsrc + '"/>' +
 	'<h3>'+$(this).find('short-title').text()+
-	'</h3><p class="auteur">auteur: '+$(this).find('main-author').text()+
+	'</h3><p class="auteur">auteur: '+$(this).find('main-author').first().text()+
     '</p><p class="samenvatting">' + $(this).find('summary:first').text() +
     '</p></a></div>'
 	);
     
     //variant voor carrousel 
     $("#contentCarrousel").append(
-    '<div><a href="' + $(this).find('detail-page').text()+ '">' +
-    '<img src="'+$(this).find('url').text()+  '&coversize=large">' +
+    '<div><a href="' + $(this).find('detail-page').first().text()+ '">' +
+    '<img src="'+ imgsrc + '"/>' +
 	'<h4>'+$(this).find('short-title').text()+
-	'</h4><em>'+$(this).find('main-author').text()+
+	'</h4><em>'+$(this).find('main-author').first().text()+
     '</em></a></div>'
 	);  
       
     //variant voor kleine carrousel 
     $("#contentCarrouselSmall").append(
-    '<div><a href="' + $(this).find('detail-page').text()+ '">' +
-    '<img src="'+$(this).find('url').text()+  '&coversize=medium">' +
+    '<div><a href="' + $(this).find('detail-page').first().text()+ '">' +
+    '<img src="'+ imgsrc + '"/>' +
 	'<h4>'+$(this).find('short-title').text()+
-	'</h4><em>'+$(this).find('main-author').text()+
+	'</h4><em>'+$(this).find('main-author').first().text()+
     '</em></a></div>'
 	);
       
     //variant voor full screen carrousel
     $("#contentCarrouselFullScreen").append(
-    '<div><a class="targetvoorcolorbox" href="' + $(this).find('detail-page').text()+ '&c_hideheader=true&c_hidesearchbox=true">' +
-    '<img src="'+$(this).find('url').text()+  '&coversize=large">' +
+    '<div><a class="targetvoorcolorbox" href="' + $(this).find('detail-page').first().text()+ '&c_hideheader=true&c_hidesearchbox=true">' +
+    '<img src="'+ imgsrc + '"/>' +
 	'<h4>'+$(this).find('short-title').text()+
-	'</h4><em>'+$(this).find('main-author').text()+
+	'</h4><em>'+$(this).find('main-author').first().text()+
     '</em></a></div>'
 	);
      
