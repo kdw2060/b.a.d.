@@ -120,13 +120,13 @@ function parse(document){
     '</em></a></div>'
 	);
      
-    // als je slechts 1 bepaalde voorbeeldweergave wenst te gebruiken delete dan de codestukjes bij de andere 3 varianten. 
+    // als je slechts 1 bepaalde weergave wenst te gebruiken delete dan de codestukjes bij de andere 3 varianten. 
   });
  }  
 });
     
 //eens de carousseldiv opgebouwd is en de pagina geladen is, kunnen we de carrousel initialiseren. We maken gebruik van slick.js, zie http://kenwheeler.github.io/slick/
-//voor de full hd variant laten we de links openen in een 'modal', ook die moet geïnitialiseerd worden, hiervoor gebruiken we Colorbox, zie http://www.jacklmoore.com/colorbox/ 
+//voor de full hd variant laten we de links openen in een modal, ook die moet geïnitialiseerd worden, hiervoor gebruiken we Colorbox, zie http://www.jacklmoore.com/colorbox/ 
 $(document).ajaxStop(function(){
     InitCarrousel();
     $('.targetvoorcolorbox').colorbox({iframe:true, innerWidth:"1150px", innerHeight:"890px"});
