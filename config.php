@@ -181,7 +181,7 @@ body {
         file_put_contents('carrouseltitel.txt', $titel);
         
         // vervang in onderstaande url 'gemeente' door jouw bib/gemeentenaam
-        $ablsearch = "http://zoeken.gemeente.bibliotheek.be/api/v0/search/?q=" . $zoekstring . "&authorization=" . $ablauthkey;  
+        $ablsearch = "http://cataloguswebservices.bibliotheek.be/gemeente/search/?q=" . $zoekstring . "&authorization=" . $ablauthkey;  
                 
         $xml = file_get_contents("$ablsearch") or exit("<script>alert('Je gaf geen geldige zoekterm in of de aquabrowser retourneerde geen resultaat');</script>");
         file_put_contents('local_copy_of_feed.xml', $xml);
